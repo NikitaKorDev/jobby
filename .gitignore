@@ -1,0 +1,24 @@
+__pycache__/
+.pytest_cache/
+*.py[cod]
+.venv/
+
+# Runtime output
+/data/
+/resumes/
+# Benchmark output (contains model verdicts on your resume)
+/bench/
+
+# Personal resume (read-only input, keep out of git)
+resume/*.docx
+
+# Personal data derived from the resume / your labels
+config/resume_tags.yaml
+config/labels.yaml
+
+# Web UI
+web/node_modules/
+web/dist/
+
+# Personal design notes
+jobby-plan.md

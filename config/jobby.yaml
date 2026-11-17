@@ -1,0 +1,54 @@
+# Jobby runtime configuration.
+# Every value here is intentional and editable; nothing is hard-coded in the code.
+# Relative paths are resolved against the jobby/ folder.
+
+source:
+  # "fixture" reads the small demo database; "duckdb" reads the real job database.
+  # The real DB was verified against jobby-plan.md item 7: url and description are
+  # populated on every current row (21,987 listings, 2026-11-15).
+  mode: duckdb
+  path: ../job_listings.duckdb
+  table: dim_job_listings
+
+storage:
+  sqlite: data/jobby.sqlite3
+
+resume:
+  # Read-only source. Tailored resumes are always written as copies under resumes_dir.
+  source_path: resume/resume.docx
+  criteria: config/criteria.yaml
+  tag_aliases: config/tag_aliases.yaml
+
+ollama:
+  # Windows Ollama is not visible on localhost from WSL; "auto" probes localhost,
+  # OLLAMA_URL from the environment and the WSL default gateway.
+  url: auto
+  model: qwen3:4b
+  # Explicit context window: Ollama silently truncates without it.
+  num_ctx: 8192
+  num_predict: 320
+  temperature: 0
+  # CPU-only inference is slow; allow long single requests.
+  timeout_s: 900
+
+batch:
+  # null = process everything left after the pre-filter. Set later after benchmarking.
+  max_per_run: null
+  newest_first: true
+
+prefilter:
+  # Listings with an empty technologies array are still evaluated on their description.
+  include_untagged: true
+
+online_check:
+  timeout_s: 4
+  user_agent: "Mozilla/5.0 (compatible; Jobby/0.1; +local)"
+
+api:
+  host: 127.0.0.1
+  port: 8000
+  open_browser: true
+
+paths:
+  resumes_dir: resumes
+  bench_dir: bench

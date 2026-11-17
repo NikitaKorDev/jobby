@@ -1,0 +1,76 @@
+# Tag normalization (jobby-plan.md item 3).
+# Keys are lower-case aliases found in job listings or in the resume;
+# values are the canonical tag name used for comparisons.
+
+aliases:
+  js: javascript
+  java script: javascript
+  ts: typescript
+  py: python
+  python3: python
+  python 3: python
+  postgres: postgresql
+  postgre sql: postgresql
+  psql: postgresql
+  mssql: sql server
+  ms sql: sql server
+  "c sharp": c#
+  csharp: c#
+  c sharp: c#
+  dotnet: .net
+  ".net core": .net
+  asp.net: .net
+  node: node.js
+  nodejs: node.js
+  node js: node.js
+  react.js: react
+  reactjs: react
+  vue.js: vue
+  vuejs: vue
+  next.js: next.js
+  nextjs: next.js
+  rest: rest api
+  restful api: rest api
+  restful: rest api
+  api: rest api
+  ci cd: ci/cd
+  cicd: ci/cd
+  continuous integration: ci/cd
+  k8s: kubernetes
+  docker compose: docker
+  gcp: google cloud
+  google cloud platform: google cloud
+  microsoft azure: azure
+  amazon web services: aws
+  ml: machine learning
+  ai: ai
+  artificial intelligence: ai
+  llms: llm
+  large language models: llm
+  llm: llm
+  genai: generative ai
+  generative ai: generative ai
+  html css: html
+  css3: css
+  html5: html
+  express.js: express
+  expressjs: express
+  flask api: flask
+  fast api: fastapi
+  pytorch: pytorch
+  tensorflow: tensorflow
+  scikit learn: scikit-learn
+  sklearn: scikit-learn
+
+# Tags that must never be treated as a technology match on their own.
+ignore:
+  - communication skills
+  - english
+  - polish
+  - teamwork
+  - agile
+  - scrum
+  - jira
+  - confluence
+  - git
+  - github

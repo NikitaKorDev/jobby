@@ -1,0 +1,21 @@
+# Evaluation criteria for the Determinator (jobby-plan.md item 12).
+#
+# This file is injected verbatim into the evaluation prompt, so edit it freely:
+# the determinator reads it on every run. Rules are combined with the resume
+# (which is the only source of truth about the candidate's skills).
+#
+# Anything not listed here is judged by the model against the resume:
+# seniority fit, technologies, employment type, salary.
+
+must_have:
+  - >-
+    Remote work: the role must be fully remote or remote-first.
+    Office-only and hybrid-only roles do not qualify.
+  - >-
+    Language: Polish or English. A role that requires any other language
+    (for example German) does not qualify.
+
+# Free-form extra guidance appended to the prompt.
+notes: |
+  Roles that require several years of commercial experience are not worth
+  applying to.
